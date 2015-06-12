@@ -3,6 +3,9 @@
   <groupId>MySQL_ConnectionTest</groupId>
   <artifactId>MySQL_ConnectionTest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -29,6 +32,11 @@
   		<groupId>org.seleniumhq.selenium</groupId>
   		<artifactId>selenium-java</artifactId>
   		<version>2.46.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>5.1.35</version>
   	</dependency>
   	<dependency>
   		<groupId>org.postgresql</groupId>
