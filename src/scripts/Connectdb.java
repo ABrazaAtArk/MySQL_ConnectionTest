@@ -14,7 +14,7 @@ import org.junit.Ignore;
 import static org.junit.Assert.assertEquals;
 import java.lang.Object;
 
-public class dbConnectionMySQL {
+public class Connectdb {
 
 		 public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
