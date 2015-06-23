@@ -9,10 +9,10 @@ public class Connectdb {
 
 		 public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
-	     String dbUrl = "jdbc:mysql://localhost:3306/one";
+	     String dbUrl = "jdbc:mysql://localhost:3306/assetcore";
 		 String username = "root";
 		 String password = "password";
-         String query1    = "select * from pets;";
+         String query1    = "select * from Person;";
          
 		 Class.forName("org.postgresql.Driver");
 		 
