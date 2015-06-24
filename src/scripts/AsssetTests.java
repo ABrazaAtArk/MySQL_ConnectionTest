@@ -1,6 +1,6 @@
 package scripts;
 
-	import java.sql.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-	public class AssetCoreLoginOnly {
+	public class AssetTests {
 	  private WebDriver driver;
 	  private String baseUrl;
 	  private boolean acceptNextAlert = true;
