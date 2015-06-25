@@ -9,12 +9,13 @@ import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 	
 
-	import org.junit.*;
+
+import org.junit.*;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
-	import org.openqa.selenium.*;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -37,40 +38,12 @@ import org.openqa.selenium.support.ui.Select;
 		     String dbUrl = "jdbc:mysql://localhost:3306/assetcore";
 			 String username = "root";
 			 String password = "password";
-//	         String query1    = "delete from asset where id > 1;";
-	         String query2    = "select count(*) from asset;";
-			 
-			Connection con = DriverManager.getConnection(dbUrl,username,password);
-			 
-			System.out.println("Connected to database");
-			 
-//			Statement stmt1 =con.createStatement();
-			Statement stmt2 =con.createStatement();
-			
-//		    stmt1.executeUpdate(query1);
-			ResultSet rs2 = stmt2.executeQuery(query2);
-			
-			  while (rs2.next()) {
-			  String  CountOfRecords = rs2.getString(1);
-				  System.out.println(CountOfRecords);
-				  org.junit.Assert.assertEquals("failure - strings are not equal", CountOfRecords, String.valueOf('4'));
-			  }  
-			    
-	        con.close();
-			System.out.println("Connection closed");
-	}
-	  
-	  @Test
-	  public void testBuild3Assets() throws Exception {
-		     String dbUrl = "jdbc:mysql://localhost:3306/assetcore";
-			 String username = "root";
-			 String password = "password";
 	         String query1    = "delete from asset where id > 1;";
 	         String query2    = "select count(*) from asset;";
 			 
 			Connection con = DriverManager.getConnection(dbUrl,username,password);
 			 
-			System.out.println("Connected to database");
+			System.out.println("Connected to database for DBClearAssetTable");
 			 
 			Statement stmt1 =con.createStatement();
 			Statement stmt2 =con.createStatement();
@@ -79,13 +52,20 @@ import org.openqa.selenium.support.ui.Select;
 			ResultSet rs2 = stmt2.executeQuery(query2);
 			
 			  while (rs2.next()) {
-			      String CountOfRecords = rs2.getString(1);
-				  System.out.println(CountOfRecords);
-				  }
-		  
+			  String  CountOfRecords = rs2.getString(1);
+				  System.out.println("Expected CountOfRecords in DB = " + "1");
+				  System.out.println("Actual   CountOfRecords in DB = " + CountOfRecords);				  
+				  org.junit.Assert.assertEquals("failure - strings are not equal", CountOfRecords, String.valueOf('1'));
+			  }  
+			    
 	        con.close();
-			System.out.println("Connection closed");  
-		  
+			System.out.println("Connection closed for DBClearAssetTable");
+	}
+//    public void testBuild3Assets() throws Exception {	  
+	  @Test
+	  public void main() throws ClassNotFoundException, SQLException {
+ 
+
 	    driver.get(baseUrl + "/AssetCore/login");
 	    driver.findElement(By.name("username")).clear();
 	    driver.findElement(By.name("username")).sendKeys("a");
@@ -112,10 +92,36 @@ import org.openqa.selenium.support.ui.Select;
 	    driver.findElement(By.id("topNavButtonSaveId")).click();
 	    driver.findElement(By.id("topNavUserNameId")).click();
 	    driver.findElement(By.id("signOutOfAssetId")).click();
+	    
+	     String dbUrl = "jdbc:mysql://localhost:3306/assetcore";
+		 String username = "root";
+		 String password = "password";
+//        String query1    = "delete from asset where id > 1;";
+        String query2    = "select count(*) from asset;";
+		 
+		Connection con = DriverManager.getConnection(dbUrl,username,password);
+		 
+		System.out.println("Connected to database for main");
+		 
+//		Statement stmt1 =con.createStatement();
+		Statement stmt2 =con.createStatement();
+		
+//	    stmt1.executeUpdate(query1);
+		ResultSet rs2 = stmt2.executeQuery(query2);
+		
+		  while (rs2.next()) {
+		      String CountOfRecords = rs2.getString(1);
+			  System.out.println("Expected CountOfRecords in DB = " + "4");
+			  System.out.println("Actual   CountOfRecords in DB = " +  CountOfRecords);	
+			  }
+	  
+       con.close();
+		System.out.println("Connection to database closed for main"); 
+	  
 	  }
 	  
   
-	  @After
+      @After
 	  public void tearDown() throws Exception {
 	    driver.quit();
 	    String verificationErrorString = verificationErrors.toString();
