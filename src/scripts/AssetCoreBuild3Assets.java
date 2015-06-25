@@ -62,10 +62,9 @@ import org.openqa.selenium.support.ui.Select;
 			System.out.println("Connection closed for DBClearAssetTable");
 	}
 //    public void testBuild3Assets() throws Exception {	  
-	  @Test
-	  public void main() throws ClassNotFoundException, SQLException {
+	
+	  public void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
  
-
 	    driver.get(baseUrl + "/AssetCore/login");
 	    driver.findElement(By.name("username")).clear();
 	    driver.findElement(By.name("username")).sendKeys("a");
