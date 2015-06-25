@@ -22,7 +22,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-        <mainClass>scripts.AsssetTests</mainClass>
+        <mainClass>scripts.AssetCoreBuild3Assets</mainClass>
       </configuration>
       </plugin> 
     </plugins>
