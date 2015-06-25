@@ -22,7 +22,16 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-        <mainClass>scripts.AssetCoreBuild3Assets</mainClass>
+        <mainClass>scripts.AssetTests</mainClass>
+      </configuration>
+      </plugin> 
+    </plugins>
+          <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.4.0</version>
+        <configuration>
+        <mainClass>scripts.AssetTests</mainClass>
       </configuration>
       </plugin> 
     </plugins>
