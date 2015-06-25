@@ -63,7 +63,7 @@ import org.openqa.selenium.support.ui.Select;
 	}
 //    public void testBuild3Assets() throws Exception {	  
 	
-	  public void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
+	  public static void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
  
 	    driver.get(baseUrl + "/AssetCore/login");
 	    driver.findElement(By.name("username")).clear();
