@@ -28,9 +28,9 @@ import org.openqa.selenium.support.ui.Select;
       
 	  @Before
 	  public void setUp() throws Exception {
-	    driver = new FirefoxDriver();
-	    baseUrl = "http://localhost:8012/";
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    driver = new FirefoxDriver();
+		    baseUrl = "http://localhost:8012/";
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 
 	  @Test
@@ -61,14 +61,9 @@ import org.openqa.selenium.support.ui.Select;
 	        con.close();
 			System.out.println("Connection closed for DBClearAssetTable");
 	}
-//    public void testBuild3Assets() throws Exception {	  
-	
-	  public static void main() throws ClassNotFoundException, SQLException {
-// 	    driver = new FirefoxDriver();
-//	    baseUrl = "http://localhost:8012/";
-//	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    
-	    
+      @Test
+	  public void testBuild3Assets() throws Exception {	  
+  
 	    driver.get(baseUrl + "/AssetCore/login");
 	    driver.findElement(By.name("username")).clear();
 	    driver.findElement(By.name("username")).sendKeys("a");
@@ -95,25 +90,21 @@ import org.openqa.selenium.support.ui.Select;
 	    driver.findElement(By.id("topNavButtonSaveId")).click();
 	    driver.findElement(By.id("topNavUserNameId")).click();
 	    driver.findElement(By.id("signOutOfAssetId")).click();
-	    
+      }
+      
+         @Test
+		 public static void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
 	     String dbUrl = "jdbc:mysql://localhost:3306/assetcore";
 		 String username = "root";
 		 String password = "password";
-//        String query1    = "delete from asset where id > 1;";
-        String query2    = "select count(*) from asset;";
-		 
-		Connection con = DriverManager.getConnection(dbUrl,username,password);
-		 
-		System.out.println("Connected to database for main");
-		 
-//		Statement stmt1 =con.createStatement();
-		Statement stmt2 =con.createStatement();
+         String query3    = "select count(*) from asset;";
+	     Connection con = DriverManager.getConnection(dbUrl,username,password);
+    	 System.out.println("Connected to database for main");
+		 Statement stmt3 =con.createStatement();
+		 ResultSet rs3 = stmt3.executeQuery(query3);
 		
-//	    stmt1.executeUpdate(query1);
-		ResultSet rs2 = stmt2.executeQuery(query2);
-		
-		  while (rs2.next()) {
-		      String CountOfRecords = rs2.getString(1);
+		  while (rs3.next()) {
+		      String CountOfRecords = rs3.getString(1);
 			  System.out.println("Expected CountOfRecords in DB = " + "4");
 			  System.out.println("Actual   CountOfRecords in DB = " +  CountOfRecords);	
 			  }
