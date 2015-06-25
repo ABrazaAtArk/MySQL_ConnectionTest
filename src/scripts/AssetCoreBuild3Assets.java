@@ -28,9 +28,9 @@ import org.openqa.selenium.support.ui.Select;
       
 	  @Before
 	  public void setUp() throws Exception {
-//	    driver = new FirefoxDriver();
-//	    baseUrl = "http://localhost:8012/";
-//	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    driver = new FirefoxDriver();
+	    baseUrl = "http://localhost:8012/";
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 
 	  @Test
@@ -64,9 +64,9 @@ import org.openqa.selenium.support.ui.Select;
 //    public void testBuild3Assets() throws Exception {	  
 	
 	  public static void main() throws ClassNotFoundException, SQLException {
- 	    driver = new FirefoxDriver();
-	    baseUrl = "http://localhost:8012/";
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+// 	    driver = new FirefoxDriver();
+//	    baseUrl = "http://localhost:8012/";
+//	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    
 	    
 	    driver.get(baseUrl + "/AssetCore/login");
