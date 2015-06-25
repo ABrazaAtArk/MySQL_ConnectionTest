@@ -63,7 +63,7 @@ import org.openqa.selenium.support.ui.Select;
 	}
 //    public void testBuild3Assets() throws Exception {	  
 	
-	  public void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
+	  public static void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
  	    driver = new FirefoxDriver();
 	    baseUrl = "http://localhost:8012/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
