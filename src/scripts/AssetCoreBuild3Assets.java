@@ -7,11 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
-	
 
-
+import org.junit.runners.MethodSorters;
+import org.junit.FixMethodOrder;
 import org.junit.*;
-
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -19,6 +18,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 	public class AssetCoreBuild3Assets {
 	  private WebDriver driver;
 	  private String baseUrl;
@@ -32,6 +32,7 @@ import org.openqa.selenium.support.ui.Select;
 		    baseUrl = "http://localhost:8012/";
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
+
 
 	  @Test
 	  public void DBClearAssetTable() throws Exception {
@@ -60,7 +61,8 @@ import org.openqa.selenium.support.ui.Select;
 			    
 	        con.close();
 			System.out.println("Connection closed for DBClearAssetTable");
-	}
+	}   
+
       @Test
 	  public void testBuild3Assets() throws Exception {	  
   
@@ -90,10 +92,10 @@ import org.openqa.selenium.support.ui.Select;
 	    driver.findElement(By.id("topNavButtonSaveId")).click();
 	    driver.findElement(By.id("topNavUserNameId")).click();
 	    driver.findElement(By.id("signOutOfAssetId")).click();
-      }
-      
+      }	  
+	  
          @Test
-		 public static void main(String[] args) throws ClassNotFoundException, SQLException, Exception {
+   	     public void testBuild3AssetsValidation() throws Exception {	 
 	     String dbUrl = "jdbc:mysql://localhost:3306/assetcore";
 		 String username = "root";
 		 String password = "password";
