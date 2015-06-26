@@ -1,3 +1,25 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Gist
+
+    @ABrazaAtArk
+
+1
+0
+
+    0
+
+ABrazaAtArk/MySQL_ConnectionTest
+
+MySQL_ConnectionTest/src/scripts/AsssetTests.java
+@ABrazaAtArk ABrazaAtArk just now Update AsssetTests.java
+
+1 contributor
+223 lines (193 sloc) 8.266 kB
 package scripts;
 
 import java.sql.Connection;
@@ -105,7 +127,7 @@ import org.openqa.selenium.support.ui.Select;
 	    }
 	  }
 	
-	  public  void main() throws ClassNotFoundException, SQLException {
+	  public static void main(String[] args) throws ClassNotFoundException, SQLException {
 			//System.setProperty("webdriver.ie.driver", "C:\\Selenium\\IEDriverServer.exe");	
 			//WebDriver driver = new InternetExplorerDriver();
 		     String dbUrl = "jdbc:mysql://localhost:3306/one";
@@ -185,38 +207,13 @@ import org.openqa.selenium.support.ui.Select;
 			  
 	        con.close();
 			System.out.println("Connection closed");
-			
-	   System.out.println("Connection to AssetCore/login opened for testBuild3Asset"); 
-	    driver.get(baseUrl + "/AssetCore/login");
-	    driver.findElement(By.name("username")).clear();
-	    driver.findElement(By.name("username")).sendKeys("a");
-	    driver.findElement(By.name("password")).clear();
-	    driver.findElement(By.name("password")).sendKeys("a");
-	    driver.findElement(By.name("submit")).click();
-	    driver.findElement(By.id("topNavButtonAddChildId")).click();
-	    driver.findElement(By.id("newAssetNameId")).clear();
-	    driver.findElement(By.id("newAssetNameId")).sendKeys("a1");
-	    driver.findElement(By.name("submit")).click();
-	    driver.findElement(By.id("topNavOverlayId")).click();
-	    driver.findElement(By.id("topNavButtonAddChildId")).click();
-	    driver.findElement(By.id("newAssetNameId")).clear();
-	    driver.findElement(By.id("newAssetNameId")).sendKeys("a2");
-	    new Select(driver.findElement(By.id("newAssetArchetypeId"))).selectByVisibleText("Information System");
-	    driver.findElement(By.name("submit")).click();
-	    driver.findElement(By.id("topNavOverlayId")).click();
-	    driver.findElement(By.id("topNavButtonAddChildId")).click();
-	    driver.findElement(By.id("newAssetNameId")).clear();
-	    driver.findElement(By.id("newAssetNameId")).sendKeys("a3");
-	    new Select(driver.findElement(By.id("newAssetArchetypeId"))).selectByVisibleText("Data");
-	    driver.findElement(By.name("submit")).click();
-	    driver.findElement(By.id("topNavOverlayId")).click();
-	    driver.findElement(By.id("topNavButtonSaveId")).click();
-	    driver.findElement(By.id("topNavUserNameId")).click();
-	    driver.findElement(By.id("signOutOfAssetId")).click();
-	    System.out.println("Connection to AssetCore/login closed for testBuild3Asset"); 
-	    System.out.println();	
-		 
-	    
+
 		}
 	}
 
+    Status API Training Shop Blog About Help 
+
+    © 2015 GitHub, Inc. Terms Privacy Security Contact 
+
+
+	
