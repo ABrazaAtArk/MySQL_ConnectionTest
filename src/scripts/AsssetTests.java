@@ -105,7 +105,7 @@ import org.openqa.selenium.support.ui.Select;
 	    }
 	  }
 	
-	  public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	  public  void main(String[] args) throws ClassNotFoundException, SQLException {
 			//System.setProperty("webdriver.ie.driver", "C:\\Selenium\\IEDriverServer.exe");	
 			//WebDriver driver = new InternetExplorerDriver();
 		     String dbUrl = "jdbc:mysql://localhost:3306/one";
