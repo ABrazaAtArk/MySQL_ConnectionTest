@@ -1,25 +1,3 @@
-
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Gist
-
-    @ABrazaAtArk
-
-1
-0
-
-    0
-
-ABrazaAtArk/MySQL_ConnectionTest
-
-MySQL_ConnectionTest/src/scripts/AsssetTests.java
-@ABrazaAtArk ABrazaAtArk just now Update AsssetTests.java
-
-1 contributor
-223 lines (193 sloc) 8.266 kB
 package scripts;
 
 import java.sql.Connection;
@@ -210,10 +188,6 @@ import org.openqa.selenium.support.ui.Select;
 
 		}
 	}
-
-    Status API Training Shop Blog About Help 
-
-    © 2015 GitHub, Inc. Terms Privacy Security Contact 
 
 
 	
