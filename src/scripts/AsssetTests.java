@@ -32,15 +32,35 @@ import org.openqa.selenium.support.ui.Select;
 
 	  @Test
 	  public void testTemp() throws Exception {
-	    driver.get(baseUrl + "/AssetCore/");
+  		System.out.println("Connection to AssetCore/login opened for testBuild3Asset"); 
+	    driver.get(baseUrl + "/AssetCore/login");
 	    driver.findElement(By.name("username")).clear();
 	    driver.findElement(By.name("username")).sendKeys("a");
 	    driver.findElement(By.name("password")).clear();
 	    driver.findElement(By.name("password")).sendKeys("a");
 	    driver.findElement(By.name("submit")).click();
+	    driver.findElement(By.id("topNavButtonAddChildId")).click();
+	    driver.findElement(By.id("newAssetNameId")).clear();
+	    driver.findElement(By.id("newAssetNameId")).sendKeys("a1");
+	    driver.findElement(By.name("submit")).click();
+	    driver.findElement(By.id("topNavOverlayId")).click();
+	    driver.findElement(By.id("topNavButtonAddChildId")).click();
+	    driver.findElement(By.id("newAssetNameId")).clear();
+	    driver.findElement(By.id("newAssetNameId")).sendKeys("a2");
+	    new Select(driver.findElement(By.id("newAssetArchetypeId"))).selectByVisibleText("Information System");
+	    driver.findElement(By.name("submit")).click();
+	    driver.findElement(By.id("topNavOverlayId")).click();
+	    driver.findElement(By.id("topNavButtonAddChildId")).click();
+	    driver.findElement(By.id("newAssetNameId")).clear();
+	    driver.findElement(By.id("newAssetNameId")).sendKeys("a3");
+	    new Select(driver.findElement(By.id("newAssetArchetypeId"))).selectByVisibleText("Data");
+	    driver.findElement(By.name("submit")).click();
+	    driver.findElement(By.id("topNavOverlayId")).click();
+	    driver.findElement(By.id("topNavButtonSaveId")).click();
 	    driver.findElement(By.id("topNavUserNameId")).click();
 	    driver.findElement(By.id("signOutOfAssetId")).click();
-	    driver.findElement(By.linkText("sign in")).click();
+	    System.out.println("Connection to AssetCore/login closed for testBuild3Asset"); 
+	    System.out.println();
 	  }
 
 	  @After
